@@ -5,9 +5,16 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   body {
-    @apply bg-white text-gray-900;
+    @apply bg-white text-slate-900 selection:bg-blue-100 selection:text-blue-700;
   }
+}
+
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: radial-gradient(circle, #e2e8f0 1px, transparent 1px);
 }
 
