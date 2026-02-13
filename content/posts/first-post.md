@@ -2,6 +2,8 @@
 title: "My First Blog Post"
 date: "2026-02-01"
 description: "Welcome to my new Next.js 14 blog using App Router and Markdown!"
+tags: ["Next.js", "Markdown", "Web Dev"]
+author: "Alex Developer"
 ---
 
 # Hello World

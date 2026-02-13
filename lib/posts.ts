@@ -12,6 +12,17 @@ export interface PostData {
   date: string;
   description: string;
   contentHtml?: string;
+  tags?: string[];
+  author?: string;
+  coverImage?: string;
+  readingTime?: string;
+}
+
+function calculateReadingTime(content: string): string {
+  const wordsPerMinute = 200;
+  const words = content.trim().split(/\s+/).length;
+  const minutes = Math.ceil(words / wordsPerMinute);
+  return `${minutes} min read`;
 }
 
 export function getSortedPostsData(): PostData[] {
@@ -27,11 +38,14 @@ export function getSortedPostsData(): PostData[] {
 
     // Use gray-matter to parse the post metadata section
     const matterResult = matter(fileContents);
+    
+    const readingTime = calculateReadingTime(matterResult.content);
 
     // Combine the data with the id
     return {
       slug,
-      ...(matterResult.data as { title: string; date: string; description: string }),
+      readingTime,
+      ...(matterResult.data as { title: string; date: string; description: string; tags?: string[]; author?: string; coverImage?: string; }),
     };
   });
 
@@ -43,6 +57,15 @@ export function getSortedPostsData(): PostData[] {
       return -1;
     }
   });
+}
+
+export function getAllTags(): string[] {
+  const posts = getSortedPostsData();
+  const tags = new Set<string>();
+  posts.forEach(post => {
+    post.tags?.forEach(tag => tags.add(tag));
+  });
+  return Array.from(tags);
 }
 
 export function getAllPostSlugs() {
@@ -73,11 +96,14 @@ export async function getPostData(slug: string): Promise<PostData> {
     .use(html)
     .process(matterResult.content);
   const contentHtml = processedContent.toString();
+  
+  const readingTime = calculateReadingTime(matterResult.content);
 
   // Combine the data with the id and contentHtml
   return {
     slug,
     contentHtml,
-    ...(matterResult.data as { title: string; date: string; description: string }),
+    readingTime,
+    ...(matterResult.data as { title: string; date: string; description: string; tags?: string[]; author?: string; coverImage?: string; }),
   };
 }

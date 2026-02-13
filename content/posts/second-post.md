@@ -2,6 +2,8 @@
 title: "Learning Next.js App Router"
 date: "2026-02-10"
 description: "Deep dive into Server Components, Layouts, and Routing."
+tags: ["Next.js", "React", "Tutorial"]
+author: "Alex Developer"
 ---
 
 # App Router is Awesome
