@@ -8,31 +8,40 @@ export default function Home() {
   return (
     <div className="relative isolate">
       {/* Hero Section */}
-      <div className="relative isolate pt-14 lg:pt-20 border-b border-slate-100 bg-white">
+      <div className="relative isolate pt-14 lg:pt-20 border-b border-slate-100 bg-white overflow-hidden">
         <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-grid-pattern [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
-        <div className="absolute inset-0 -z-10 bg-gradient-to-tr from-white via-white to-blue-50/30"></div>
+        <div className="absolute inset-0 -z-10 bg-gradient-to-tr from-white via-white to-blue-50/40"></div>
         
         <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <div className="mb-8 flex justify-center">
-              <div className="relative rounded-full px-4 py-1.5 text-sm leading-6 text-slate-600 ring-1 ring-slate-900/10 hover:ring-slate-900/20 bg-white/50 backdrop-blur-sm transition-all">
-                <span className="font-semibold text-blue-600">New</span> The app router migration guide is out. <Link href="/blog/second-post" className="font-semibold text-blue-600"><span className="absolute inset-0" aria-hidden="true" />Read more <span aria-hidden="true">&rarr;</span></Link>
-              </div>
+          <div className="mx-auto max-w-3xl text-center">
+            
+            <div className="mb-8 flex justify-center animate-fade-in opacity-0">
+              <Link href="/blog/second-post" className="relative rounded-full px-4 py-1.5 text-sm leading-6 text-slate-600 ring-1 ring-slate-900/10 hover:ring-blue-600/30 hover:bg-blue-50/50 bg-white/60 backdrop-blur-sm transition-all duration-300 hover:scale-105 group">
+                <span className="font-semibold text-blue-600 mr-2">New Update</span> 
+                The app router migration guide is out. 
+                <span className="font-semibold text-blue-600 ml-1 inline-flex items-center group-hover:translate-x-1 transition-transform">
+                   Read <span aria-hidden="true">&rarr;</span>
+                </span>
+              </Link>
             </div>
-            <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-6xl mb-6">
-              Engineering the Future of <span className="text-blue-600">Web Development</span>
+            
+            <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-6xl mb-6 animate-fade-in animate-delay-100 opacity-0 leading-tight">
+              Engineering the Future of <br className="hidden sm:block" /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Web Development</span>
             </h1>
-            <p className="mt-6 text-lg leading-8 text-slate-600 max-w-xl mx-auto">
-              Deep dives into software architecture, modern frontend patterns, and building scalable applications. Join the community of developers building better web.
+            
+            <p className="mt-6 text-lg leading-8 text-slate-600 max-w-2xl mx-auto animate-fade-in animate-delay-200 opacity-0">
+              Deep dives into software architecture, modern frontend patterns, and building scalable applications. Join the community of developers building a better web.
             </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
+            
+            <div className="mt-10 flex items-center justify-center gap-x-6 animate-fade-in animate-delay-300 opacity-0">
               <Link
                 href="/blog"
-                className="rounded-full bg-slate-900 px-6 py-3.5 text-sm font-semibold text-white shadow-sm hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600 transition-all hover:scale-105"
+                className="rounded-full bg-slate-900 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-slate-900/20 hover:bg-slate-800 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
               >
-                Read the Blog
+                Start Reading
               </Link>
-              <a href="https://github.com" className="text-sm font-semibold leading-6 text-slate-900 flex items-center gap-1 group">
+              <a href="https://github.com" className="text-sm font-semibold leading-6 text-slate-900 flex items-center gap-2 px-4 py-2 rounded-full hover:bg-slate-50 transition-colors group">
+                <svg className="h-5 w-5 text-slate-500" fill="currentColor" viewBox="0 0 24 24"><path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" /></svg>
                 View on GitHub <span aria-hidden="true" className="group-hover:translate-x-1 transition-transform">→</span>
               </a>
             </div>

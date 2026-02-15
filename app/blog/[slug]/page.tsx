@@ -64,7 +64,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
                 </div>
              )}
 
-            <article className="prose prose-lg prose-slate prose-headings:text-slate-900 prose-headings:font-bold prose-p:text-slate-600 prose-li:text-slate-600 prose-a:text-blue-600 hover:prose-a:text-blue-500 prose-img:rounded-2xl prose-img:shadow-lg mx-auto bg-white p-0 sm:p-8 rounded-none sm:rounded-3xl">
+            <article className="prose prose-lg prose-slate prose-headings:text-slate-900 prose-headings:font-bold prose-p:text-slate-600 prose-p:leading-relaxed prose-li:text-slate-600 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-img:rounded-2xl prose-img:shadow-xl prose-code:text-blue-600 prose-code:bg-blue-50 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md prose-code:font-semibold prose-pre:bg-slate-900 prose-pre:text-slate-100 prose-pre:shadow-lg prose-pre:rounded-xl mx-auto bg-white p-4 sm:p-12 rounded-none sm:rounded-3xl shadow-sm sm:shadow-xl sm:shadow-slate-200/40">
                 <div dangerouslySetInnerHTML={{ __html: postData.contentHtml || "" }} />
             </article>
 
